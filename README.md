@@ -14,18 +14,24 @@ sudo make install
 
 
 # 2. Install Geant4 10.6 and prerequisites
-0) Install openssl and libssl-dev
+1) Update programs
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+2) Install openssl and libssl-dev
 ```
 sudo apt-get --fix-missing install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libxext-dev gfortran libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev doxygen doxygen-gui ipython ipython-qtconsole build-essential python-pip
 ```
-1) install latest cmake binaries from https://cmake.org/download/
+3) install latest cmake binaries from https://cmake.org/download/
 put them into:
 $HOME/soft/cmake-3.16.3-Linux-x86_64
-2) add path to cmake binaries in the PATH variable (also add it in your aspiran$
+4) add path to cmake binaries in the PATH variable (also add it in your aspiran$
 export PATH=$HOME/soft/cmake-3.16.3-Linux-x86_64/bin:$PATH
-3) sudo yum install xerces-c
-4) sudo yum install mesa-libGL,mesa-libGL-devel
-5) Download geant4 sources from:
+5) sudo yum install xerces-c
+6) sudo yum install mesa-libGL,mesa-libGL-devel
+7) Download geant4 sources from:
 http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/InstallationGuide/$
 to
 $HOME/soft/geant4.10.06
