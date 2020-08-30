@@ -56,13 +56,24 @@ make test
 make install
 ```
 6) Upgrade video drivers [http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/InstallationGuide/html/gettingstarted.html]
-7) Download geant4 sources from: [https://geant4.web.cern.ch/support/download]
-6) mkdir $HOME/soft/geant4.10.06-build
-7) cd $HOME/soft/geant4.10.06-build
-8) cmake -DGEANT4_USE_OPENGL_X11=ON -DGEANT4_USE_XM=ON -DGEANT4_USE_QT=ON -DGEANT4_INSTALL_DATA=ON -DCMAKE_INSTALL_PREFIX=$HOME/soft/geant4.10.06-install $HOME/soft/ge$
-9) make -j6
-10) initialize geant4 environment (also add it in your aspirantura.sh)
+```
+sudo apt install qt5-default
+sudo apt-get install mesa-common-dev
+sudo apt install x11-utils
+sudo apt-get install libx11-dev
+sudo apt install libxmu-dev
+sudo apt install libmotif-dev
+```
+7) Download geant4 sources from: [https://geant4.web.cern.ch/support/download] and then
+```
+mkdir geant4-build geant4-install
+cd geant4-build
+cmake -DGEANT4_USE_OPENGL_X11=ON -DGEANT4_USE_XM=ON -DGEANT4_USE_QT=ON -DGEANT4_INSTALL_DATA=ON -DCMAKE_INSTALL_PREFIX=~/software/geant4-install ~/software/geant4.10.06.p02
+make
+make test
+make install
 source $HOME/soft/geant4.10.06-install/bin/geant4.sh
+```
 
 # 3. Install PYTHIA
 1) cd $HOME/soft
