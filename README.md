@@ -40,6 +40,7 @@ export PATH=$HOME/soft/cmake-3.18.2/bin:$PATH ## Add path to cmake binaries in t
 cmake --version
 ```
 4) Install CLHEP [http://proj-clhep.web.cern.ch/proj-clhep/INSTALLATION/clhep-2.0.html]
+Downland from [http://proj-clhep.web.cern.ch/proj-clhep/clhep23.html]
 ```
 mkdir clhep-build clhep-install
 cd clhep-build
