@@ -109,7 +109,7 @@ LD_LIBRARY_PATH=$PYTHIA8/lib:$LD_LIBRARY_PATH
 ```
 mkdir root-install root-built
 cd root-build
-cmake -DCMAKE_INSTALL_PREFIX=$HOME/software/root-install ~/software/root-6.22.02 -Dpythia8=ON -DPYTHIA8_DIR=$PYTHIA8 -DPYTHIA8_INCLUDE_DIR=$PYTHIA8/include -DPYTHIA8_LIBRARY=$PYTHIA8/lib$ -Dminuit2=ON -Dmathmore=ON -Dcxx14=ON
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/software/root-install ~/software/root-6.22.02 -Dpythia8=ON -DPYTHIA8_DIR=$PYTHIA8 -DPYTHIA8_INCLUDE_DIR=$PYTHIA8/include -DPYTHIA8_LIBRARY=$PYTHIA8/lib -Dminuit2=ON -Dmathmore=ON -Dcxx14=ON
 make
 make install
 source thisroot.sh
