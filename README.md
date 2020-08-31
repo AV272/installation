@@ -28,15 +28,17 @@ sudo apt-get --fix-missing install git dpkg-dev cmake g++ gcc binutils libx11-de
 ```
 3) Install latest cmake binaries from [https://cmake.org/download/]
 ```
+sudo apt-get install openssl
+sudo apt-get install libssl-dev
 wget https://github.com/Kitware/CMake/releases/download/v3.18.2/cmake-3.18.2.tar.gz
 tar -zxvf cmake-3.18.2.tar.gz
 cd cmake-3.18.2
 ./bootstrap
 make
 sudo make install
+export PATH=$HOME/soft/cmake-3.18.2/bin:$PATH ## Add path to cmake binaries in the PATH variable
 cmake --version
 ```
-* Add path to cmake binaries in the PATH variable `export PATH=$HOME/soft/cmake-3.18.2/bin:$PATH`
 4) Install CLHEP [http://proj-clhep.web.cern.ch/proj-clhep/INSTALLATION/clhep-2.0.html]
 ```
 mkdir clhep-build clhep-install
