@@ -75,7 +75,7 @@ cmake -DGEANT4_USE_OPENGL_X11=ON -DGEANT4_USE_XM=ON -DGEANT4_USE_QT=ON -DGEANT4_
 make
 make test
 make install
-source $HOME/soft/geant4.10.06-install/bin/geant4.sh
+source $HOME/software/geant4-install/bin/geant4.sh
 ```
 
 # 3. Install PYTHIA
