@@ -79,27 +79,38 @@ source $HOME/software/geant4-install/bin/geant4.sh
 ```
 
 # 3. Install PYTHIA
-1) cd $HOME/soft
-2) download latest pythia from http://home.thep.lu.se/~torbjorn/Pythia.html
-3) tar -zxvf pythia8243.tgz
-4) cd pythia8243
-5) ./configure --enable-shared
-6) make
-7) add this line in aspirantura.sh (loaded in .bashrc):
-export PYTHIA8=$HOME/soft/pythia8243
+* PYTHIA install before ROOT. Download latest pythia from [http://home.thep.lu.se/~torbjorn/Pythia.html]
+```
+tar -zxvf pythia8302.tgz
+cd pythia8302
+./configure --enable-shared
+make
+```
+* Add this lines in `.bashrc`:
+```
+export PYTHIA8=$HOME/software/pythia8302
 export PYTHIA8DATA=$PYTHIA8/share/Pythia8/xmldoc
 LD_LIBRARY_PATH=$PYTHIA8/lib:$LD_LIBRARY_PATH
+```
 
 # 4. Install ROOT
-1) git clone http://github.com/root-project/root.git
-2) cd root
-3) git checkout -b v6-18-04 v6-18-04
-4) cd ..
-5) mkdir root_build
-6) cd root_build
-7) cmake -DCMAKE_INSTALL_PREFIX=$HOME/aspirantura/root_install -Dpythia8=ON -DPYTHIA8_DIR=$PYTHIA8 -DPYTHIA8_INCLUDE_DIR=$PYTHIA8/include -DPYTHIA8_LIBRARY=$PYTHIA8/li$
-8) make -j6
-9) make install
+* Check dependencies [https://root.cern/install/dependencies/]  
+* Downland sourse from the link [https://root.cern/install/all_releases/]
+* Installation guide [https://root.cern/install/]
+```
+mkdir root-install root-built
+cd root-build
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/software/root-install ~/software/root-6.22.02 -Dpythia8=ON -DPYTHIA8_DIR=$PYTHIA8 -DPYTHIA8_INCLUDE_DIR=$PYTHIA8/include -DPYTHIA8_LIBRARY=$PYTHIA8/li$ -Dminuit2=ON -Dmathmore=ON -Dcxx14=ON
+make
+make install
+source thisroot.sh
+```
+* Add source to the `/.bashrc`:
+```
+export ROOTSYS=/home/lkst/software/root-6.22.02-build
+export PATH=$ROOTSYS/bin:$PATH
+export LD_LIBRARY_PATH=$ROOTSYS/lib/:$LD_LIBRARY_PATH
+```
 
 # 5. Install GARFIELD++ (requires root)
 More details: https://garfieldpp.web.cern.ch/garfieldpp/getting-started/
