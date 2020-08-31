@@ -77,6 +77,15 @@ make test
 make install
 source $HOME/software/geant4-install/bin/geant4.sh
 ```
+8) Compilate program for Geant4:
+```
+mkdir built
+cd built
+cmake ..
+make
+./progName
+/run/beamOn 100000000
+```
 
 # 3. Install PYTHIA
 * PYTHIA install before ROOT. Download latest pythia from [http://home.thep.lu.se/~torbjorn/Pythia.html]
