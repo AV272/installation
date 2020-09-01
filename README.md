@@ -99,7 +99,7 @@ make
 ```
 export PYTHIA8=$HOME/software/pythia8302
 export PYTHIA8DATA=$PYTHIA8/share/Pythia8/xmldoc
-LD_LIBRARY_PATH=$PYTHIA8/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$PYTHIA8/lib:$LD_LIBRARY_PATH
 ```
 
 # 4. Install ROOT
@@ -112,6 +112,7 @@ cd root-build
 cmake -DCMAKE_INSTALL_PREFIX=$HOME/software/root-install ~/software/root-6.22.02 -Dpythia8=ON -DPYTHIA8_DIR=$PYTHIA8 -DPYTHIA8_INCLUDE_DIR=$PYTHIA8/include -DPYTHIA8_LIBRARY=$PYTHIA8/lib -Dminuit2=ON -Dmathmore=ON -Dcxx14=ON
 make
 make install
+cd bin
 source thisroot.sh
 ```
 * Add source to the `/.bashrc`:
