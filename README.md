@@ -123,14 +123,27 @@ export LD_LIBRARY_PATH=$ROOTSYS/lib/:$LD_LIBRARY_PATH
 ```
 
 # 5. Install GARFIELD++ (requires root)
-More details: https://garfieldpp.web.cern.ch/garfieldpp/getting-started/
-1) export GARFIELD_HOME=$HOME/soft/garfield
-2) git clone https://gitlab.cern.ch/garfield/garfieldpp.git $GARFIELD_HOME
-3) cd $GARFIELD_HOME
-4) mkdir build
-5) cd build
-6) cmake -DCMAKE_INSTALL_PREFIX=$HOME/soft/garfield_install -DWITH_EXAMPLES=OFF $GARFIELD_HOME
-7) make install
-8) add these lines in aspirantura.sh (loaded in .bashrc):
-export GARFIELD_HOME=$HOME/soft/garfield_install
+* Installation instructions and source files in [https://garfieldpp.web.cern.ch/garfieldpp/getting-started/]
+```
+export GARFIELD_HOME=$HOME/software/garfield
+git clone https://gitlab.cern.ch/garfield/garfieldpp.git $GARFIELD_HOME
+cd $GARFIELD_HOME
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/software/garfield_install -DWITH_EXAMPLES=OFF $GARFIELD_HOME
+make
+make install
+```
+* Add these lines in .bashrc:
+```
+export GARFIELD_HOME=$HOME/software/garfield/install
 export LD_LIBRARY_PATH=$GARFIELD_HOME/lib:$LD_LIBRARY_PATH
+```
+* Make project:
+```
+mkdir build 
+cd build
+cmake ..
+make
+./example
+```
