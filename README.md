@@ -67,6 +67,15 @@ sudo apt-get install libx11-dev
 sudo apt install libxmu-dev
 sudo apt install libmotif-dev
 ```
+For CenOS 7:
+```
+sudo yum install qt5-qtbase-devel
+sudo yum install mesa-libGLU
+sudo yum install xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps
+sudo yum install libX11
+sudo yum install libXmu
+sudo yum install motif
+```
 7) Download geant4 sources from: [https://geant4.web.cern.ch/support/download] and then
 ```
 mkdir geant4-build geant4-install
