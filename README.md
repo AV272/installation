@@ -74,7 +74,9 @@ sudo yum install mesa-libGLU
 sudo yum install xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps
 sudo yum install libX11
 sudo yum install libXmu
-sudo yum install motif
+sudo yum install motif-devel
+sudo yum install expat-devel
+sudo yum install libXmu-devel
 ```
 7) Download geant4 sources from: [https://geant4.web.cern.ch/support/download] and then
 ```
