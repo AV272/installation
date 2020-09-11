@@ -115,10 +115,20 @@ export LD_LIBRARY_PATH=$PYTHIA8/lib:$LD_LIBRARY_PATH
 
 # 4. Install ROOT
 * Check dependencies [https://root.cern/install/dependencies/]  
+```
+sudo yum install git cmake3 gcc-c++ gcc binutils \
+libX11-devel libXpm-devel libXft-devel libXext-devel openssl-devel
+
+sudo yum install gcc-gfortran pcre-devel \
+mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
+fftw-devel cfitsio-devel graphviz-devel \
+avahi-compat-libdns_sd-devel openldap-devel python-devel \
+libxml2-devel gsl-devel
+```
 * Downland sourse from the link [https://root.cern/install/all_releases/]
 * Installation guide [https://root.cern/install/]
 ```
-mkdir root-install root-built
+mkdir root-install root-build
 cd root-build
 cmake -DCMAKE_INSTALL_PREFIX=$HOME/software/root-install ~/software/root-6.22.02 -Dpythia8=ON -DPYTHIA8_DIR=$PYTHIA8 -DPYTHIA8_INCLUDE_DIR=$PYTHIA8/include -DPYTHIA8_LIBRARY=$PYTHIA8/lib -Dminuit2=ON -Dmathmore=ON -Dcxx14=ON
 make
@@ -128,7 +138,7 @@ source thisroot.sh
 ```
 * Add source to the `/.bashrc`:
 ```
-export ROOTSYS=/home/lkst/software/root-6.22.02-build
+export ROOTSYS=/home/lkst/software/root-build
 export PATH=$ROOTSYS/bin:$PATH
 export LD_LIBRARY_PATH=$ROOTSYS/lib/:$LD_LIBRARY_PATH
 ```
