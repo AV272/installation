@@ -130,7 +130,7 @@ libxml2-devel gsl-devel
 ```
 mkdir root-install root-build
 cd root-build
-cmake -DCMAKE_INSTALL_PREFIX=$HOME/software/root-install ~/software/root-6.22.02 -Dpythia8=ON -DPYTHIA8_DIR=$PYTHIA8 -DPYTHIA8_INCLUDE_DIR=$PYTHIA8/include -DPYTHIA8_LIBRARY=$PYTHIA8/lib -Dminuit2=ON -Dmathmore=ON -Dcxx14=ON
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/software/root-install ~/software/root-6.22.02 -Dpythia8=ON -DPYTHIA8_DIR=$PYTHIA8 -DPYTHIA8_INCLUDE_DIR=$PYTHIA8/include -DPYTHIA8_LIBRARY=$PYTHIA8/lib/libpythia8.so ../root -Dminuit2=ON -Dmathmore=ON -Dcxx14=ON
 make
 make install
 cd bin
