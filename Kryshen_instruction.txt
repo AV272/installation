@@ -1,4 +1,4 @@
-InstalInstall gcc 7.3
+Install gcc 7.3
 1) install devtoolset (gcc 7.3)
 yum install -y centos-release-scl
 yum-config-manager --enable rhel-server-rhscl-7-rpms
@@ -10,17 +10,17 @@ Install Geant4 10.6 and prerequisites
 1) install latest cmake binaries from https://cmake.org/download/
 put them into:
 $HOME/soft/cmake-3.16.3-Linux-x86_64
-2) add path to cmake binaries in the PATH variable (also add it in your aspiran$
+2) add path to cmake binaries in the PATH variable (also add it in your aspirantura.sh):
 export PATH=$HOME/soft/cmake-3.16.3-Linux-x86_64/bin:$PATH
-3) sudo yum install xerces-c
+3) sudo yum install xerces-c 
 4) sudo yum install mesa-libGL,mesa-libGL-devel
 5) Download geant4 sources from:
-http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/InstallationGuide/$
+http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/InstallationGuide/html/index.html
 to
 $HOME/soft/geant4.10.06
 6) mkdir $HOME/soft/geant4.10.06-build
 7) cd $HOME/soft/geant4.10.06-build
-8) cmake -DGEANT4_USE_OPENGL_X11=ON -DGEANT4_USE_XM=ON -DGEANT4_USE_QT=ON -DGEANT4_INSTALL_DATA=ON -DCMAKE_INSTALL_PREFIX=$HOME/soft/geant4.10.06-install $HOME/soft/ge$
+8) cmake -DGEANT4_USE_OPENGL_X11=ON -DGEANT4_USE_XM=ON -DGEANT4_USE_QT=ON -DGEANT4_INSTALL_DATA=ON -DCMAKE_INSTALL_PREFIX=$HOME/soft/geant4.10.06-install $HOME/soft/geant4.10.06
 9) make -j6
 10) initialize geant4 environment (also add it in your aspirantura.sh)
 source $HOME/soft/geant4.10.06-install/bin/geant4.sh
@@ -44,7 +44,7 @@ Install ROOT
 4) cd ..
 5) mkdir root_build
 6) cd root_build
-7) cmake -DCMAKE_INSTALL_PREFIX=$HOME/aspirantura/root_install -Dpythia8=ON -DPYTHIA8_DIR=$PYTHIA8 -DPYTHIA8_INCLUDE_DIR=$PYTHIA8/include -DPYTHIA8_LIBRARY=$PYTHIA8/li$
+7) cmake -DCMAKE_INSTALL_PREFIX=$HOME/aspirantura/root_install -Dpythia8=ON -DPYTHIA8_DIR=$PYTHIA8 -DPYTHIA8_INCLUDE_DIR=$PYTHIA8/include -DPYTHIA8_LIBRARY=$PYTHIA8/lib/libpythia8.so ../root
 8) make -j6
 9) make install
 
@@ -60,3 +60,4 @@ More details: https://garfieldpp.web.cern.ch/garfieldpp/getting-started/
 8) add these lines in aspirantura.sh (loaded in .bashrc):
 export GARFIELD_HOME=$HOME/soft/garfield_install
 export LD_LIBRARY_PATH=$GARFIELD_HOME/lib:$LD_LIBRARY_PATH
+
