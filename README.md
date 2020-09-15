@@ -151,14 +151,17 @@ git clone https://gitlab.cern.ch/garfield/garfieldpp.git $GARFIELD_HOME
 cd $GARFIELD_HOME
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=$HOME/software/garfield_install -DWITH_EXAMPLES=OFF $GARFIELD_HOME
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/software/garfield/install -DWITH_EXAMPLES=OFF $GARFIELD_HOME
 make
 make install
 ```
 * Add these lines in .bashrc:
 ```
-export GARFIELD_HOME=$HOME/software/garfield/install
-export LD_LIBRARY_PATH=$GARFIELD_HOME/lib:$LD_LIBRARY_PATH
+export GARFIELD_HOME=$HOME/software/garfield
+export LD_LIBRARY_PATH=$GARFIELD_HOME/install/lib/:$LD_LIBRARY_PATH
+export CMAKE_PREFIX_PATH=$GARFIELD_HOME/install:${CMAKE_PREFIX_PATH}
+export HEED_DATABASE=$GARFIELD_HOME/Heed/heed++/database
+source $GARFIELD_HOME/build/setup.sh
 ```
 * Make project:
 ```
